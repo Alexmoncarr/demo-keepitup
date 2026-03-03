@@ -1,0 +1,12 @@
+# .github/dependabot.yml
+version: 2
+updates:
+  - package-ecosystem: "npm" # Vigila el Frontend (Angular)
+    directory: "/frontend"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "maven" # Vigila el Backend (Spring Boot)
+    directory: "/backend"
+    schedule:
+      interval: "weekly"
