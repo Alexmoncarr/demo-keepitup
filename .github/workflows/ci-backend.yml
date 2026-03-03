@@ -1,0 +1,29 @@
+name: CI Backend (Spring Boot)
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'backend/**' # ¡La clave de la demostración!
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+      
+      - name: Configurar Java 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          
+      - name: Simular Tests y Compilación
+        run: |
+          echo "Ejecutando tests de Spring Boot..."
+          sleep 2
+          echo "Tests pasados con éxito ✅"
+          echo "Construyendo el .jar..."
+          sleep 2
+          echo "Backend compilado y listo para Docker 🚀"
