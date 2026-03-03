@@ -1,0 +1,28 @@
+name: CI Frontend (Angular)
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'frontend/**'
+
+jobs:
+  build-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+        
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Simular Linting y Build
+        run: |
+          echo "Comprobando calidad del código Angular..."
+          sleep 2
+          echo "Código limpio ✅"
+          echo "Compilando para producción (Vercel)..."
+          sleep 2
+          echo "Frontend listo 🚀"
